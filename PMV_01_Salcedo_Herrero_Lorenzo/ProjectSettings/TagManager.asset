@@ -7,6 +7,7 @@ TagManager:
   - Coin
   - Enemy
   - Spike
+  - DoorLevel2
   layers:
   - Default
   - TransparentFX

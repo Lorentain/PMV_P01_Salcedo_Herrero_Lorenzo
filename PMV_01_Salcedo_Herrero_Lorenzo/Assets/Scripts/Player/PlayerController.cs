@@ -1,13 +1,27 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
 
     [Tooltip("Referencia al Rigidbody2D")]
     [SerializeField] private Rigidbody2D rb;
+
+    [Tooltip("Referencia al texto de la cantidad de monedas obtenidas")]
+    [SerializeField] private TextMeshProUGUI coinsText;
+
+    [Tooltip("Referencia a las imágenes de la vida del jugador")]
+    [SerializeField] private Image heart1;
+    [SerializeField] private Image heart2;
+    [SerializeField] private Image heart3;
+
+    [SerializeField] private TextMeshProUGUI gameOverText;
 
     [Tooltip("Referencia a la fuerza del salto del jugador")]
     [SerializeField] private float jumpForce;
@@ -18,14 +32,17 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Referencia a la velocidad el jugador")]
     [SerializeField] private float speed;
 
-    public int playerHP = 3;
+    [Tooltip("Referencia a la vida actual del jugador")]
+    [SerializeField] private int playerHP = 3;
 
-    public int counterCoins = 0;
+    [Tooltip("Referencia al contador de monedas del jugador")]
+    private int coinsCounter = 0;
 
     // Start is called before the first frame update
     private void Start()
     {
-
+        coinsText.text = coinsCounter.ToString();
+        gameOverText.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -52,38 +69,60 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    // Colisión contra monedas
+    // COLISIONES
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.CompareTag("Coin"))
-        {
-            Destroy(other.gameObject);
-            counterCoins++;
-            Debug.Log("Monedas obtenidas " + counterCoins);
-        }
-
-        if (other.collider.CompareTag("Spike"))
+        if (other.collider.CompareTag("Spike")) // Colisión contra pinchos
         {
             Destroy(gameObject);
+            heart1.enabled = false;
+            heart2.enabled = false;
+            heart3.enabled = false;
+            gameOverText.gameObject.SetActive(true);
             Debug.Log("MUERTO");
+        }
+
+        if(other.collider.CompareTag("DoorLevel2")) { // Colisión contra la puerta hacia nivel 2
+            SceneManager.LoadScene("Second Level");
+            Debug.Log("Cargando el segundo nivel");
         }
     }
 
-    // Colisión contra enemigos
+    // TRIGGERS
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy")) // Trigger contra enemigo
         {
-            if (playerHP == 1)
-            {
-                Destroy(gameObject);
-                Debug.Log("MUERTO");
+            playerHP--;
+            switch(playerHP) {
+                case 0: {
+                    Destroy(gameObject);
+                    heart1.gameObject.SetActive(false);
+                    gameOverText.gameObject.SetActive(true);
+                    Debug.Log("MUERTO");
+                }
+                break;
+
+                case 1: {
+                    heart2.gameObject.SetActive(false);
+                    Debug.Log("1 vida restante");
+                }
+                break;
+
+                case 2: {
+                    heart3.gameObject.SetActive(false);
+                    Debug.Log("2 vidas restantes");
+                }
+                break;
             }
-            else
-            {
-                playerHP--;
-                Debug.Log("Vidas restantes " + playerHP);
-            }
+        }
+
+        if (other.CompareTag("Coin")) // Trigger contra monedas
+        {
+            Destroy(other.gameObject);
+            coinsCounter++;
+            coinsText.text = coinsCounter.ToString();
+            Debug.Log("Monedas obtenidas " + coinsCounter);
         }
     }
 }
