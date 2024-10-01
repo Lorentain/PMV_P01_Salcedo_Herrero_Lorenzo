@@ -7,6 +7,9 @@ TagManager:
   - Coin
   - Enemy
   - Spike
+  - KeyLevel2
+  - DoorLevel1
+  - Lava
   - DoorLevel2
   layers:
   - Default
