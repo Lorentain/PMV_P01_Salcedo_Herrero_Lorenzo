@@ -93,7 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Coin")) // Trigger contra monedas
         {
-            AudioManager.instance.PlayCoinPickUpSound();
+            //AudioManager.instance.PlayCoinPickUpSound();
             Destroy(other.gameObject);
             coinsCounter++;
             coinsText.text = coinsCounter.ToString();
