@@ -82,12 +82,6 @@ public class PlayerController : MonoBehaviour
     // COLISIONES
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.CompareTag("DoorLevel1"))
-        { // Colisión contra la puerta hacia nivel 2
-            SceneManager.LoadScene("Second Level");
-            Debug.Log("Cargando el segundo nivel");
-        }
-
         if(other.collider.CompareTag("DoorLevel2") && keyLevel2) {
             //SceneManager.LoadScene("Third Level");
             Debug.Log("Cargando el tercer nivel");
@@ -99,6 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Coin")) // Trigger contra monedas
         {
+            AudioManager.instance.PlayCoinPickUpSound();
             Destroy(other.gameObject);
             coinsCounter++;
             coinsText.text = coinsCounter.ToString();
