@@ -24,12 +24,22 @@ public class HealthController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         playerHP -= damage;
+        if(playerHP < 0) {
+            Destroy(gameObject);
+            heart1.gameObject.SetActive(false);
+            heart2.gameObject.SetActive(false);
+            heart3.gameObject.SetActive(false);
+            backgroundGameOverUI.gameObject.SetActive(true);
+            Debug.Log("MUERTO");
+        }
         switch (playerHP)
         {
             case 0:
                 {
                     Destroy(gameObject);
                     heart1.gameObject.SetActive(false);
+                    heart2.gameObject.SetActive(false);
+                    heart3.gameObject.SetActive(false);
                     backgroundGameOverUI.gameObject.SetActive(true);
                     Debug.Log("MUERTO");
                 }
@@ -37,6 +47,7 @@ public class HealthController : MonoBehaviour
 
             case 1:
                 {
+                    heart3.gameObject.SetActive(false);
                     heart2.gameObject.SetActive(false);
                     Debug.Log("1 vida restante");
                 }
