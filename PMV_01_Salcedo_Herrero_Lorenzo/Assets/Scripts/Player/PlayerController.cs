@@ -21,9 +21,6 @@ public class PlayerController : MonoBehaviour
 
     // HUD DEL JUGADOR
 
-    [Tooltip("Referencia al texto de la cantidad de monedas obtenidas")]
-    [SerializeField] private TextMeshProUGUI coinsText;
-
     // MOVIMIENTO BÁSICO DEL JUGADOR
 
     [Tooltip("Referencia a la fuerza del salto del jugador")]
@@ -36,17 +33,10 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Referencia a la velocidad el jugador")]
     [SerializeField] private float speed;
 
-    [Tooltip("Referencia al contador de monedas del jugador")]
-    private int coinsCounter = 0;
-
-    // INVENTARIO DEL JUGADOR
-    [Header("Inventario del jugador")]
-    [SerializeField] private bool keyLevel2 = false;
-
     // Start is called before the first frame update
     private void Start()
     {
-        coinsText.text = coinsCounter.ToString();
+
     }
 
     // Update is called once per frame
@@ -82,10 +72,7 @@ public class PlayerController : MonoBehaviour
     // COLISIONES
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.collider.CompareTag("DoorLevel2") && keyLevel2) {
-            //SceneManager.LoadScene("Third Level");
-            Debug.Log("Cargando el tercer nivel");
-        }
+
     }
 
     // TRIGGERS
@@ -93,18 +80,15 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Coin")) // Trigger contra monedas
         {
-            AudioManager.instance.PlayCoinPickUpSound();
+            AudioManager.PlayCoinPickUpSound();
             Destroy(other.gameObject);
-            coinsCounter++;
-            coinsText.text = coinsCounter.ToString();
-            Debug.Log("Monedas obtenidas " + coinsCounter);
+            InventoryController.AddMoneda();
         }
 
-        if (other.CompareTag("KeyLevel2"))
+        if (other.CompareTag("Key"))
         {
             Destroy(other.gameObject);
-            keyLevel2 = true;
-            Debug.Log("Llave nivel 2 obtenida");
+            InventoryController.AddKey();
         }
     }
 }

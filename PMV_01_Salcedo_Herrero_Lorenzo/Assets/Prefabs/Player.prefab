@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 9123579113010665415}
   - component: {fileID: 7014926629612685180}
   - component: {fileID: 5674739287585299936}
+  - component: {fileID: 7517061783395432571}
+  - component: {fileID: 6060429065043124990}
   - component: {fileID: 6063596635492483356}
   - component: {fileID: 3749736576401711216}
+  - component: {fileID: 8021424644795850630}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -32,7 +35,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.95, y: -1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -101,11 +104,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6063596635492483356}
-  coinsText: {fileID: 0}
+  animator: {fileID: 8021424644795850630}
+  spriteRenderer: {fileID: 9123579113010665415}
   jumpForce: 7
   fallForce: 1.5
-  speed: 1.5
-  keyLevel2: 0
+  speed: 2
 --- !u!114 &5674739287585299936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,6 +126,31 @@ MonoBehaviour:
   heart3: {fileID: 0}
   playerHP: 3
   backgroundGameOverUI: {fileID: 0}
+--- !u!114 &7517061783395432571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278120227604354727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cc10f33c53cbcf4099e6bfc1668c617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6060429065043124990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278120227604354727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85906db7300dc624d90444cf691c22be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsText: {fileID: 0}
 --- !u!50 &6063596635492483356
 Rigidbody2D:
   serializedVersion: 4
@@ -185,3 +213,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.09978795}
   m_Size: {x: 0.805254, y: 0.80754995}
   m_Direction: 0
+--- !u!95 &8021424644795850630
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278120227604354727}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40df858f84825844bb29808e99f3f1c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

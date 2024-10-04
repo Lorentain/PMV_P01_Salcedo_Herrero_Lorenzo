@@ -6,59 +6,28 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
 
-    // INTERFAZ HP DEL JUGADOR
-
-    [Tooltip("Referencia a las imágenes de la vida del jugador")]
-    [SerializeField] private Image heart1;
-    [SerializeField] private Image heart2;
-    [SerializeField] private Image heart3;
+    private static HealthController instance;
 
     [Tooltip("Referencia a la vida actual del jugador")]
     [SerializeField] private int playerHP = 3;
 
-    // INTERFAZ GAME OVER
-    [SerializeField] private Image backgroundGameOverUI;
-
     #region Funciones públicas
+
+    private void Awake() {
+        instance = this;
+    }
+
+    public static int GetHealth() {
+        return instance.playerHP;
+    }
 
     public void TakeDamage(int damage)
     {
         playerHP -= damage;
-        if(playerHP < 0) {
+        UIController.SetHealthUI(playerHP);
+        if(playerHP <= 0) {
             Destroy(gameObject);
-            heart1.gameObject.SetActive(false);
-            heart2.gameObject.SetActive(false);
-            heart3.gameObject.SetActive(false);
-            backgroundGameOverUI.gameObject.SetActive(true);
-            Debug.Log("MUERTO");
-        }
-        switch (playerHP)
-        {
-            case 0:
-                {
-                    Destroy(gameObject);
-                    heart1.gameObject.SetActive(false);
-                    heart2.gameObject.SetActive(false);
-                    heart3.gameObject.SetActive(false);
-                    backgroundGameOverUI.gameObject.SetActive(true);
-                    Debug.Log("MUERTO");
-                }
-                break;
-
-            case 1:
-                {
-                    heart3.gameObject.SetActive(false);
-                    heart2.gameObject.SetActive(false);
-                    Debug.Log("1 vida restante");
-                }
-                break;
-
-            case 2:
-                {
-                    heart3.gameObject.SetActive(false);
-                    Debug.Log("2 vidas restantes");
-                }
-                break;
+            PlayerPrefs.DeleteAll();
         }
     }
 
@@ -67,24 +36,10 @@ public class HealthController : MonoBehaviour
     #region Unity Colisión y Trigger
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.collider.CompareTag("Spike")) // Colisión contra pinchos
+        if (other.collider.CompareTag("Spike") || other.collider.CompareTag("Lava")) // Colisión contra pinchos
         {
             Destroy(gameObject);
-            heart1.enabled = false;
-            heart2.enabled = false;
-            heart3.enabled = false;
-            backgroundGameOverUI.gameObject.SetActive(true);
-            Debug.Log("MUERTO");
-        }
-
-        if (other.collider.CompareTag("Lava")) // Colisión contra lava
-        {
-            Destroy(gameObject);
-            heart1.enabled = false;
-            heart2.enabled = false;
-            heart3.enabled = false;
-            backgroundGameOverUI.gameObject.SetActive(true);
-            Debug.Log("MUERTO");
+            PlayerPrefs.DeleteAll();
         }
     }
 
@@ -94,31 +49,6 @@ public class HealthController : MonoBehaviour
         if (other.CompareTag("Enemy")) // Trigger contra enemigo
         {
             playerHP--;
-            switch (playerHP)
-            {
-                case 0:
-                    {
-                        Destroy(gameObject);
-                        heart1.gameObject.SetActive(false);
-                        backgroundGameOverUI.gameObject.SetActive(true);
-                        Debug.Log("MUERTO");
-                    }
-                    break;
-
-                case 1:
-                    {
-                        heart2.gameObject.SetActive(false);
-                        Debug.Log("1 vida restante");
-                    }
-                    break;
-
-                case 2:
-                    {
-                        heart3.gameObject.SetActive(false);
-                        Debug.Log("2 vidas restantes");
-                    }
-                    break;
-            }
         }
     }
     #endregion

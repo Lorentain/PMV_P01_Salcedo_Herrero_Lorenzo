@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
-    public AudioSource audioSource;
+    private static AudioManager instance;
+    public AudioSource audioSourceObjetos; 
     public AudioClip coinPickUpSound;
 
-    public void PlayCoinPickUpSound()
+    private void Awake() {
+        instance = this;
+    }
+
+    public static void PlayCoinPickUpSound()
     {
-        audioSource.PlayOneShot(coinPickUpSound);
+        instance.audioSourceObjetos.PlayOneShot(instance.coinPickUpSound);
     }
 }
