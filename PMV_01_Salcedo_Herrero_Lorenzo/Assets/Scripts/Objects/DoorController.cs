@@ -14,14 +14,18 @@ public class DoorController : MonoBehaviour
     {
         if(other.collider.CompareTag("Player")) {
             if(!needKey) {
+                AudioManager.PlayOpenDoorSound();
                 PlayerPrefs.SetInt("HP",HealthController.GetHealth());
                 PlayerPrefs.SetInt("Coins",InventoryController.GetMoneda());
                 SceneManager.LoadScene(nextLevel);
+                Debug.Log("Abres la puerta");
             }else if(InventoryController.GetKey() == true) {
                 PlayerPrefs.SetInt("HP",HealthController.GetHealth());
                 PlayerPrefs.SetInt("Coins",InventoryController.GetMoneda());
                 SceneManager.LoadScene(nextLevel);
+                Debug.Log("Tienes llave y abres la puerta");
             }else {
+                AudioManager.PlayLockDoorSound();
                 Debug.Log("No tienes la llava necesaria");
             }
             

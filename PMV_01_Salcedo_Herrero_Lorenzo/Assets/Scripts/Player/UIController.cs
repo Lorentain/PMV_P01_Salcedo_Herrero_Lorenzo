@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,10 @@ public class UIController : MonoBehaviour
 
     // INTERFAZ GAME OVER
     [SerializeField] private Image backgroundGameOverUI;
+
+    private void Start() {
+         
+    }
 
     private void Awake()
     {

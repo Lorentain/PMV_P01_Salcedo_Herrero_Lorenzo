@@ -8,7 +8,7 @@ public class InventoryController : MonoBehaviour
 
     private int coinsCounter;
 
-    private bool key;
+    [SerializeField]private bool key;
 
     private void Start() {
         coinsCounter = PlayerPrefs.GetInt("Coins");

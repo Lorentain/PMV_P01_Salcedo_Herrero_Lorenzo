@@ -1866,6 +1866,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3132015956500296857, guid: 201cac2e037a76b41aa904b6e0abf928, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6776535415669814616, guid: 201cac2e037a76b41aa904b6e0abf928, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -3964,6 +3968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 2394931435673280885, guid: 84c24bbe0424346498407926ef54a5e9, type: 3}
+      propertyPath: needKey
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8849573579503161046, guid: 84c24bbe0424346498407926ef54a5e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.098922
@@ -4135,9 +4143,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6060429065043124990, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
+      propertyPath: heart1
+      value: 
+      objectReference: {fileID: 1128814918}
+    - target: {fileID: 6060429065043124990, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
+      propertyPath: heart2
+      value: 
+      objectReference: {fileID: 2057870560}
+    - target: {fileID: 6060429065043124990, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
+      propertyPath: heart3
+      value: 
+      objectReference: {fileID: 11554071}
+    - target: {fileID: 6060429065043124990, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
       propertyPath: coinsText
       value: 
       objectReference: {fileID: 1798711902}
+    - target: {fileID: 6060429065043124990, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
+      propertyPath: backgroundGameOverUI
+      value: 
+      objectReference: {fileID: 645147769}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

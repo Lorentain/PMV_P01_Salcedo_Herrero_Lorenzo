@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,10 @@ public class HealthController : MonoBehaviour
 
     [Tooltip("Referencia a la vida actual del jugador")]
     [SerializeField] private int playerHP = 3;
+
+    private void Start() {
+
+    }
 
     #region Funciones públicas
 
