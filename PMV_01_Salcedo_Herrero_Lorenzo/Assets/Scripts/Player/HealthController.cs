@@ -11,9 +11,11 @@ public class HealthController : MonoBehaviour
 
     [Tooltip("Referencia a la vida actual del jugador")]
     [SerializeField] private int playerHP = 3;
+    [SerializeField] private int actualHP;
 
     private void Start() {
-
+        actualHP = PlayerPrefs.GetInt("HP",playerHP);
+        UIController.SetHealthUI(actualHP);
     }
 
     #region Funciones públicas
@@ -23,14 +25,14 @@ public class HealthController : MonoBehaviour
     }
 
     public static int GetHealth() {
-        return instance.playerHP;
+        return instance.actualHP;
     }
 
     public void TakeDamage(int damage)
     {
-        playerHP -= damage;
-        UIController.SetHealthUI(playerHP);
-        if(playerHP <= 0) {
+        actualHP -= damage;
+        UIController.SetHealthUI(actualHP);
+        if(actualHP <= 0) {
             Destroy(gameObject);
             PlayerPrefs.DeleteAll();
         }
@@ -53,7 +55,7 @@ public class HealthController : MonoBehaviour
     {
         if (other.CompareTag("Enemy")) // Trigger contra enemigo
         {
-            playerHP--;
+            actualHP--;
         }
     }
     #endregion

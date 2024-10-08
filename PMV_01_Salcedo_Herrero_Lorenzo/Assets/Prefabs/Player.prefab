@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -777899312, guid: 702cf0708e8007049aafaef505ae6208, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.8399844, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 9123579113010665415}
   jumpForce: 7
   fallForce: 1.5
-  speed: 2
+  speed: 1.5
 --- !u!114 &5674739287585299936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,11 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c2001bbe482eea47b1439d112bdfe5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heart1: {fileID: 0}
-  heart2: {fileID: 0}
-  heart3: {fileID: 0}
   playerHP: 3
-  backgroundGameOverUI: {fileID: 0}
+  actualHP: 0
 --- !u!114 &7517061783395432571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc10f33c53cbcf4099e6bfc1668c617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
 --- !u!114 &6060429065043124990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,6 +149,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinsText: {fileID: 0}
+  heart1: {fileID: 0}
+  heart2: {fileID: 0}
+  heart3: {fileID: 0}
+  backgroundGameOverUI: {fileID: 0}
 --- !u!50 &6063596635492483356
 Rigidbody2D:
   serializedVersion: 4
