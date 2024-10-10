@@ -75,14 +75,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(Vector2.right * speed);
-            particles.Play();
+            //particles.Play();
         }
 
         // Compruebo si se mueve a la izquierda el jugador
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(Vector2.left * speed);
-            particles.Play();
+            //particles.Play();
         }
 
         // Compruebo si está tocando el suelo y si salta el jugador
@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isJumping = true;
+            particles.Stop();
         }
 
         if(Input.GetKey(KeyCode.P) && CanJump()) {
@@ -126,7 +127,10 @@ public class PlayerController : MonoBehaviour
             isJumping = false;
         }
 
-
+        // Particulas al caminar
+        if((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && !isJumping) {
+            particles.Play();
+        }
     }
 
     // COLISIONES

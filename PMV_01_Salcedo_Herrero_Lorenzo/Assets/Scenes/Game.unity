@@ -1161,8 +1161,12 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5699459440786838702, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5699459440786838702, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5752034169327775199, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1232,6 +1236,10 @@ PrefabInstance:
       propertyPath: backgroundGameOverUI
       value: 
       objectReference: {fileID: 1996180839}
+    - target: {fileID: 7014926629612685180, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7014926629612685180, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
       propertyPath: sizeRaycast
       value: 0.5
