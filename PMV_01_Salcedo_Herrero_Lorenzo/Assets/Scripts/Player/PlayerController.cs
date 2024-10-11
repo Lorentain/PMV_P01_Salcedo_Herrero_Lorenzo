@@ -145,6 +145,10 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Coin")) // Trigger contra monedas
         {
             AudioManager.PlayCoinPickUpSound();
+            ParticleSystem coinParticles = other.GetComponentInChildren<ParticleSystem>();
+            coinParticles.transform.parent = null; 
+            coinParticles.Play();
+            Destroy(coinParticles.gameObject, coinParticles.main.duration + coinParticles.main.startLifetime.constantMax);
             Destroy(other.gameObject);
             InventoryController.AddMoneda();
         }
