@@ -7,7 +7,7 @@ public class DoorController : MonoBehaviour
 {
     [SerializeField] private string nextLevel;
     [SerializeField] private bool needKey;
-    [SerializeField] private float delayBeforeLoading = 0.2f;
+    [SerializeField] private float delayBeforeLoading = 0.1f;
 
     // COLISIONES
     private void OnCollisionEnter2D(Collision2D other)

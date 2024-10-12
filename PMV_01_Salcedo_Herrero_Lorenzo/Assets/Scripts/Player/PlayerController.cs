@@ -155,6 +155,11 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Key"))
         {
+            AudioManager.PlayKeyPickUpSound();
+            ParticleSystem keyParticles = other.GetComponentInChildren<ParticleSystem>();
+            keyParticles.transform.parent = null;
+            keyParticles.Play();
+            Destroy(keyParticles.gameObject, keyParticles.main.duration + keyParticles.main.startLifetime.constantMax);
             Destroy(other.gameObject);
             InventoryController.AddKey();
         }
