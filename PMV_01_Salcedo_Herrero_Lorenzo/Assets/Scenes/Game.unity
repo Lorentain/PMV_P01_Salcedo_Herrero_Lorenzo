@@ -1282,26 +1282,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5699459440786838702, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: lengthInSec
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5699459440786838702, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5699459440786838702, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752034169327775199, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.226
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752034169327775199, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.475
-      objectReference: {fileID: 0}
     - target: {fileID: 5971633436191159118, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.3799
@@ -1362,26 +1342,6 @@ PrefabInstance:
       propertyPath: backgroundGameOverUI
       value: 
       objectReference: {fileID: 1996180839}
-    - target: {fileID: 7014926629612685180, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014926629612685180, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: sizeRaycast
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014926629612685180, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: maxCoyoteTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8750661586296720573, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.187
-      objectReference: {fileID: 0}
-    - target: {fileID: 8750661586296720573, guid: b4cadaa4a6492484a9ea51d423b8482e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.473
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

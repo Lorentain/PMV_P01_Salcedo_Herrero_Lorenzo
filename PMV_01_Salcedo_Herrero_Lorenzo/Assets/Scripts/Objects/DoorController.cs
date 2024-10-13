@@ -27,9 +27,14 @@ public class DoorController : MonoBehaviour
             }
             else if (InventoryController.GetKey() == true)
             {
+                AudioManager.PlayOpenDoorSound();
                 PlayerPrefs.SetInt("HP", HealthController.GetHealth());
                 PlayerPrefs.SetInt("Coins", InventoryController.GetMoneda());
-                SceneManager.LoadScene(nextLevel);
+                
+                // Usar Invoke para hacer el delay en una sola línea
+                Invoke("LoadNextLevel", delayBeforeLoading);
+
+                Debug.Log("Abres la puerta");
                 Debug.Log("Tienes llave y abres la puerta");
             }
             else

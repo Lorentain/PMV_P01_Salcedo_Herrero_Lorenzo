@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3090230621490554}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4944,11 +4944,11 @@ MonoBehaviour:
   particles: {fileID: 5699459440786838702}
   jumpForce: 7
   fallForce: 1.5
-  speed: 1.5
-  maxVelocityX: 6
+  speed: 2.5
+  maxVelocityX: 10
   maxVelocityY: 8
-  sizeRaycast: 0
-  maxCoyoteTime: 0.003
+  sizeRaycast: 0.5
+  maxCoyoteTime: 0.1
 --- !u!114 &5674739287585299936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5101,7 +5101,7 @@ Transform:
   m_GameObject: {fileID: 2245831799861313036}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.177, y: -0.615, z: 0}
+  m_LocalPosition: {x: -0.226, y: -0.475, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5132,7 +5132,7 @@ Transform:
   m_GameObject: {fileID: 4590167623141062342}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.079, y: -0.6, z: 0}
+  m_LocalPosition: {x: 0.187, y: -0.473, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
