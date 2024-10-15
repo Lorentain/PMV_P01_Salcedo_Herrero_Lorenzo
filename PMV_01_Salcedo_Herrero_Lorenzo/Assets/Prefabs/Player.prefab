@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4942,13 +4942,14 @@ MonoBehaviour:
   groundedRaycastLeftOrigin: {fileID: 5752034169327775199}
   groundedRaycastRightOrigin: {fileID: 8750661586296720573}
   particles: {fileID: 5699459440786838702}
-  jumpForce: 7
-  fallForce: 1.5
-  speed: 2.5
-  maxVelocityX: 10
+  jumpForce: 6
+  fallForce: 20
+  speed: 10
+  maxVelocityX: 6
   maxVelocityY: 8
   sizeRaycast: 0.5
   maxCoyoteTime: 0.1
+  maxJumpTime: 0.2
 --- !u!114 &5674739287585299936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5016,7 +5017,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4

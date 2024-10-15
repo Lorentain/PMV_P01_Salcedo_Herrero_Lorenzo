@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    // VARIABLES DE COMPONENTES
 
     [Tooltip("Referencia al Rigidbody2D")]
     [SerializeField] private Rigidbody2D rb;
@@ -28,8 +29,6 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Referencia al sistema de partículas")]
     [SerializeField] private ParticleSystem particles;
 
-    // HUD DEL JUGADOR
-
     // MOVIMIENTO BÁSICO DEL JUGADOR
 
     [Tooltip("Referencia a la fuerza del salto del jugador")]
@@ -42,6 +41,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Referencia a la velocidad el jugador")]
     [SerializeField] private float speed;
 
+    [Tooltip("Referencia a la dirección de movimiento")]
+    private Vector2 movementDirection;
+
     [Tooltip("Referencia a la velocidadX máxima del jugador")]
     [SerializeField] private float maxVelocityX;
 
@@ -52,13 +54,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sizeRaycast;
 
     [Tooltip("Referencia al máximo del coyote time")]
-    [SerializeField] private float maxCoyoteTime = 0.003f;
+    [SerializeField] private float maxCoyoteTime;
 
     [Tooltip("Referencia al tiempo en el aire del jugador")]
     private float timeInAir;
 
     [Tooltip("Referencia a si el jugador esta saltando")]
     private bool isJumping = false;
+
+    [Tooltip("Referencia al tiempo máximo que puede saltar el jugador")]
+    [SerializeField] private float maxJumpTime;
+
+    [Tooltip("Referencia al tiempo que lleva saltando el jugador jugador")]
+    private float jumpTime;
 
     // Start is called before the first frame update
     private void Start()
@@ -71,38 +79,48 @@ public class PlayerController : MonoBehaviour
     {
         // MOVIMIENTO BÁSICO DEL JUGADOR
 
-        // Compruebo si se mueve a la derecha el jugador
+        // Compruebo si se mueve el jugador
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddForce(Vector2.right * speed);
-            //particles.Play();
+            movementDirection = Vector2.right;
         }
-
-        // Compruebo si se mueve a la izquierda el jugador
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
-            rb.AddForce(Vector2.left * speed);
-            //particles.Play();
+            movementDirection = Vector2.left;
+        }
+        else
+        {
+            movementDirection = Vector2.zero;
         }
 
         // Compruebo si está tocando el suelo y si salta el jugador
         if (Input.GetKeyDown(KeyCode.Space) && CanJump())
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isJumping = true;
+            jumpTime = 0;
+            timeInAir = maxCoyoteTime;
             particles.Stop();
         }
 
-        if(Input.GetKey(KeyCode.P) && CanJump()) {
-            Debug.DrawLine(groundedRaycastLeftOrigin.position, groundedRaycastLeftOrigin.position + Vector3.down*sizeRaycast, Color.magenta, 100);
-            Debug.DrawLine(groundedRaycastRightOrigin.position, groundedRaycastRightOrigin.position + Vector3.down*sizeRaycast, Color.yellow, 100);
+        // Pausar durante el salto
+        if (Input.GetKey(KeyCode.P) && CanJump())
+        {
+            Debug.DrawLine(groundedRaycastLeftOrigin.position, groundedRaycastLeftOrigin.position + Vector3.down * sizeRaycast, Color.magenta, 100);
+            Debug.DrawLine(groundedRaycastRightOrigin.position, groundedRaycastRightOrigin.position + Vector3.down * sizeRaycast, Color.yellow, 100);
             EditorApplication.isPaused = true;
         }
 
-        // Comprueba si esta cayendo, para agregar una fuerza de caida al jugador
-        if (rb.velocity.y < 0)
+        // Comprobar si ya no está saltando el jugador
+
+        if (Input.GetKeyUp(KeyCode.Space) || (jumpTime > maxJumpTime))
         {
-            rb.AddForce(Vector2.down * fallForce);
+            isJumping = false;
+        }
+
+        if(isJumping) {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            jumpTime += Time.deltaTime;
+            particles.Stop();
         }
 
         // Se limita la velocidad máxima x,y
@@ -122,14 +140,24 @@ public class PlayerController : MonoBehaviour
             timeInAir = 0;
         }
 
-        if (rb.velocity.y < 0 && IsGrounded())
+        // Particulas al caminar
+        if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && IsGrounded())
         {
-            isJumping = false;
+            particles.Play();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (movementDirection != Vector2.zero)
+        {
+            rb.AddForce(movementDirection * speed);
         }
 
-        // Particulas al caminar
-        if((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && !isJumping) {
-            particles.Play();
+        // Comprueba si esta cayendo, para agregar una fuerza de caida al jugador
+        if (rb.velocity.y < 0)
+        {
+            rb.AddForce(Vector2.down * fallForce);
         }
     }
 
@@ -146,7 +174,7 @@ public class PlayerController : MonoBehaviour
         {
             AudioManager.PlayCoinPickUpSound();
             ParticleSystem coinParticles = other.GetComponentInChildren<ParticleSystem>();
-            coinParticles.transform.parent = null; 
+            coinParticles.transform.parent = null;
             coinParticles.Play();
             Destroy(coinParticles.gameObject, coinParticles.main.duration + coinParticles.main.startLifetime.constantMax);
             Destroy(other.gameObject);
@@ -203,13 +231,11 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (rb.velocity.y < 0 && timeInAir <= maxCoyoteTime)
+                if (timeInAir <= maxCoyoteTime)
                 {
                     res = true;
                 }
             }
-        }else {
-            res = false;
         }
 
         return res;
