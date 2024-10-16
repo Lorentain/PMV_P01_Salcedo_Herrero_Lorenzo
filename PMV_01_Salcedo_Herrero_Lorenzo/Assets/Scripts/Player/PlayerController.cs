@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
             ParticleSystem coinParticles = other.GetComponentInChildren<ParticleSystem>();
             coinParticles.transform.parent = null;
             coinParticles.Play();
-            Destroy(coinParticles.gameObject, coinParticles.main.duration + coinParticles.main.startLifetime.constantMax);
+            Destroy(coinParticles.gameObject,coinParticles.main.duration + coinParticles.main.startLifetime.constantMax);
             Destroy(other.gameObject);
             InventoryController.AddMoneda();
         }
