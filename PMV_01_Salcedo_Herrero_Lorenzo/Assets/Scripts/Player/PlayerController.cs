@@ -100,6 +100,7 @@ public class PlayerController : MonoBehaviour
             jumpTime = 0;
             timeInAir = maxCoyoteTime;
             particles.Stop();
+            Debug.Log("Particulas paradas");
         }
 
         // Pausar durante el salto

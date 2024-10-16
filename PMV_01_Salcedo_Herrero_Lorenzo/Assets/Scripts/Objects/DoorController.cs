@@ -47,12 +47,7 @@ public class DoorController : MonoBehaviour
 
     // Método para cargar el siguiente nivel
     private void LoadNextLevel()
-    {
-        if(nextLevel == "Second Level") {
-            LavaController.StartMoveLava();
-            Debug.Log("La lava empieza a moverse");
-        }
-        
+    { 
         SceneManager.LoadScene(nextLevel);
     }
 }

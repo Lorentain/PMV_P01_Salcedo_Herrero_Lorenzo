@@ -4942,12 +4942,12 @@ MonoBehaviour:
   groundedRaycastLeftOrigin: {fileID: 5752034169327775199}
   groundedRaycastRightOrigin: {fileID: 8750661586296720573}
   particles: {fileID: 5699459440786838702}
-  jumpForce: 6
+  jumpForce: 5.5
   fallForce: 20
   speed: 10
   maxVelocityX: 6
   maxVelocityY: 8
-  sizeRaycast: 0.5
+  sizeRaycast: 0.2
   maxCoyoteTime: 0.1
   maxJumpTime: 0.2
 --- !u!114 &5674739287585299936

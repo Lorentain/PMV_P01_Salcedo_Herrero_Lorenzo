@@ -1,27 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+
+//[RequireComponent(typeof(SpriteRenderer))]
 
 public class LavaController : MonoBehaviour
 {
-    private static LavaController instance;
 
-    [SerializeField] private GameObject lavaPrefab;
-    [SerializeField] private float moveDistance = 0.5f;
-    [SerializeField] private float moveInterval = 2f;
+    [Tooltip("Posición inicial en Y")]
+    [SerializeField] private float startYPos;
+
+    [Tooltip("Posición final en Y")]
+    [SerializeField] private float endYPos;
+
+    [Tooltip("Delay del comienzo de la lava")]
+    [SerializeField] private float delayLava;
+
+    [Tooltip("Posición inicial en X")]
+    [SerializeField] private float startXPos;
+
+    [Tooltip("Posición final en X")]
+    [SerializeField] private float endXPos;
+
+    [Tooltip("Tiempo del recorrido")]
+    [SerializeField] private float movementTimeVertical;
+
+        [Tooltip("Tiempo del recorrido")]
+    [SerializeField] private float movementTimeHorizontal;
+
+    [Tooltip("Forma de la curva")]
+    [SerializeField] private Ease movementEase;
+
+    [Tooltip("Color de inicio de la sequencia")]
+    [SerializeField] private Color startColor;
+
+    [Tooltip("Color final de la sequencia")]
+    [SerializeField] private Color endColor;
+
+    [Tooltip("Color tiempo de la sequencia")]
+    [SerializeField] private float timeColor;
 
     private void Awake() {
-        instance = this;
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public static void StartMoveLava() {
-        instance.StartCoroutine(instance.MoveLavaCoroutine());
-    }
+    private void Start() {
+        transform.DOMoveY(endYPos, movementTimeVertical).SetEase(movementEase).SetDelay(delayLava); // Moverse lentamente en Y
+        // Sequencia moverse en X
+        Sequence moveSeq = DOTween.Sequence();
+        moveSeq.Append(transform.DOMoveX(endXPos,movementTimeHorizontal).SetEase(movementEase));
+        //moveSeq.Append(spriteRenderer.DOColor(endColor,timeColor));
+        moveSeq.Append(transform.DOMoveX(startXPos,movementTimeHorizontal).SetEase(movementEase));
+        //moveSeq.Append(spriteRenderer.DOColor(startColor,timeColor));
+        moveSeq.SetLoops(-1);
 
-    private IEnumerator MoveLavaCoroutine() {
-        while(true) {
-            yield return new WaitForSeconds(moveInterval);
-            lavaPrefab.transform.position += new Vector3(0,moveDistance,0);
-        }
+        // spriteRenderer.DOFade(0,10).OnComplete(() =>
+        // {
+        //     Destroy(gameObject);
+        // });
     }
 }
