@@ -184,7 +184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: 81.25973}
+  m_AnchoredPosition: {x: 0.000030518, y: 217.51}
   m_SizeDelta: {x: 1144.4321, y: 193.3205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8697178985271231981
@@ -519,54 +519,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &2190287663158747527
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7548796805616801609}
-  - component: {fileID: 2669525189932495227}
-  m_Layer: 5
-  m_Name: ButtonExitController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7548796805616801609
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2190287663158747527}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3928357365999692224}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2669525189932495227
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2190287663158747527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899b9d0b587b4b94eb2577a6b172bf2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2236994657617968635
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,13 +551,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 613012713845861704}
-  - {fileID: 3933975329422386621}
   m_Father: {fileID: 6753366385721081165}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015259, y: -111}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 0.00010681, y: -34}
+  m_SizeDelta: {x: 450, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &609511395053892530
 CanvasRenderer:
@@ -689,8 +640,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6207041417443001542}
-        m_TargetAssemblyTypeName: ButtonPlayAgainController, Assembly-CSharp
+      - m_Target: {fileID: 4800947467174351971}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: NewGameLevel
         m_Mode: 1
         m_Arguments:
@@ -1022,6 +973,7 @@ RectTransform:
   - {fileID: 7700530874047933193}
   - {fileID: 7436432407932046900}
   - {fileID: 6753366385721081165}
+  - {fileID: 4805383498548894412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1126,8 +1078,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2.6172943, y: -0.000015258789}
+  m_SizeDelta: {x: -5.2346, y: -13.4145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3280923634281971001
 CanvasRenderer:
@@ -1157,7 +1109,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Play Again
+  m_text: Jugar de nuevo
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
@@ -1184,8 +1136,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1258,13 +1210,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6631405786796700237}
-  - {fileID: 7548796805616801609}
   m_Father: {fileID: 6753366385721081165}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035, y: -262.49}
-  m_SizeDelta: {x: 300, y: 100}
+  m_AnchoredPosition: {x: 0.00012207, y: -210}
+  m_SizeDelta: {x: 450, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2789227641025685983
 CanvasRenderer:
@@ -1348,8 +1299,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2669525189932495227}
-        m_TargetAssemblyTypeName: ButtonExitController, Assembly-CSharp
+      - m_Target: {fileID: 4800947467174351971}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -1575,7 +1526,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Salir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
@@ -1602,8 +1553,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1644,7 +1595,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &8694167835006873357
+--- !u!1 &8752882938602387766
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1652,46 +1603,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3933975329422386621}
-  - component: {fileID: 6207041417443001542}
-  m_Layer: 5
-  m_Name: ButtonPlayAgainController
+  - component: {fileID: 4805383498548894412}
+  - component: {fileID: 4800947467174351971}
+  m_Layer: 0
+  m_Name: ButtonController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &3933975329422386621
-RectTransform:
+--- !u!4 &4805383498548894412
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8694167835006873357}
+  m_GameObject: {fileID: 8752882938602387766}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 303.34106, y: -138.56223, z: 1.7275975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8016266540385857812}
+  m_Father: {fileID: 76126115435447361}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6207041417443001542
+--- !u!114 &4800947467174351971
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8694167835006873357}
+  m_GameObject: {fileID: 8752882938602387766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d42c409deb5f14b43a155f5aa20b8844, type: 3}
+  m_Script: {fileID: 11500000, guid: 385c0dd1658bb8640a41081de8a6b3a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialWarning: {fileID: 0}
+  linkSurvey: https://forms.gle/HpHDkoZJBVAHixZm8
   LevelToLoad: Game
 --- !u!1 &8775067796796463520
 GameObject:
