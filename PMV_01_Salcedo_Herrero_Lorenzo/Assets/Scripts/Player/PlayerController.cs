@@ -108,7 +108,9 @@ public class PlayerController : MonoBehaviour
         {
             Debug.DrawLine(groundedRaycastLeftOrigin.position, groundedRaycastLeftOrigin.position + Vector3.down * sizeRaycast, Color.magenta, 100);
             Debug.DrawLine(groundedRaycastRightOrigin.position, groundedRaycastRightOrigin.position + Vector3.down * sizeRaycast, Color.yellow, 100);
+            #if UNITY_EDITOR
             EditorApplication.isPaused = true;
+            #endif
         }
 
         // Comprobar si ya no está saltando el jugador
