@@ -27,22 +27,38 @@ public class AcidController : MonoBehaviour
     [Tooltip("Tiempo del recorrido")]
     [SerializeField] private float movementTimeVertical;
 
-        [Tooltip("Tiempo del recorrido")]
+    [Tooltip("Tiempo del recorrido")]
     [SerializeField] private float movementTimeHorizontal;
 
     [Tooltip("Forma de la curva")]
     [SerializeField] private Ease movementEase;
+
+    Sequence moveXSeq;
+    Sequence moveYSeq;
 
     private void Awake() {
         //spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start() {
-        transform.DOMoveY(endYPosDown, movementTimeVertical).SetEase(movementEase);
-        Sequence moveXSEQ = DOTween.Sequence(); // Secuencia movimiento en Y
-        moveXSEQ.Append(transform.DOMoveX(endXPos, movementTimeHorizontal).SetEase(movementEase));
-        moveXSEQ.Append(transform.DOMoveX(startXPos, movementTimeHorizontal).SetEase(movementEase));
-        moveXSEQ.SetLoops(5);
-        transform.DOMoveY(endYPosTop, movementTimeVertical).SetEase(movementEase).SetDelay(10);
+        ;
+        moveXSeq = DOTween.Sequence(); // Secuencia movimiento en Y
+        moveXSeq.Append(transform.DOMoveX(endXPos, movementTimeHorizontal).SetEase(movementEase));
+        moveXSeq.Append(transform.DOMoveX(startXPos, movementTimeHorizontal).SetEase(movementEase));
+        moveXSeq.SetLoops(-1);
+        moveXSeq.Pause();
+        moveYSeq = DOTween.Sequence();
+        moveYSeq.Append(transform.DOMoveY(endYPosDown, movementTimeVertical).SetEase(movementEase).OnStart(() => {
+            moveXSeq.Play();
+        }));
+        moveYSeq.Append(transform.DOMoveY(endYPosTop, movementTimeVertical).SetEase(movementEase).OnStart(() => {
+            moveXSeq.Pause();
+        }));
+        moveYSeq.SetLoops(-1);
+        moveYSeq.Pause();
+    }
+
+    public void TriggerStart() {
+        moveYSeq.Play();
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3869531601489429144}
   - component: {fileID: 7820739649074981523}
+  - component: {fileID: 3262432637595418427}
   m_Layer: 0
   m_Name: Floor Spike 2
   m_TagString: Spike
@@ -80,6 +81,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8333788, y: 0.77075386}
   m_EdgeRadius: 0
+--- !u!114 &3262432637595418427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3537189196175233076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44e8d1cfabae2a241b3d0b40dfb872e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 999
 --- !u!1 &7348301521898836910
 GameObject:
   m_ObjectHideFlags: 0
