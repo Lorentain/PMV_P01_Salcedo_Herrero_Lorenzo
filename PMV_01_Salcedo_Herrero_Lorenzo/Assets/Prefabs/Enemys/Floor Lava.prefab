@@ -11582,7 +11582,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6715351812886923107}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -11647,6 +11647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startYPos: 0
   endYPos: 5.5
+  delayLava: 0
   startXPos: -12.3
   endXPos: -11
   movementTimeVertical: 45
