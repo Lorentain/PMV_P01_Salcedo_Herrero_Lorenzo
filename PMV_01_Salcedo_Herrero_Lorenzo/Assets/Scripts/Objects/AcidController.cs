@@ -13,7 +13,9 @@ public class AcidController : MonoBehaviour
 
     [Tooltip("Posición final en Y")]
     [SerializeField] private float endYPosDown;
-    [SerializeField] private float endYPosTop;
+
+    [Tooltip("Posición inicial en Y")]
+    [SerializeField] private float startYPosTop;
 
     [Tooltip("Delay del comienzo de la lava")]
     [SerializeField] private float delayAcid;
@@ -48,11 +50,12 @@ public class AcidController : MonoBehaviour
         moveXSeq.SetLoops(-1);
         moveXSeq.Pause();
         moveYSeq = DOTween.Sequence();
-        moveYSeq.Append(transform.DOMoveY(endYPosDown, movementTimeVertical).SetEase(movementEase).OnStart(() => {
-            moveXSeq.Play();
-        }));
-        moveYSeq.Append(transform.DOMoveY(endYPosTop, movementTimeVertical).SetEase(movementEase).OnStart(() => {
+        moveYSeq.Append(transform.DOMoveY(endYPosDown, movementTimeVertical).SetEase(movementEase).OnComplete(() => {
             moveXSeq.Pause();
+            Debug.Log("Hola");
+        }));
+        moveYSeq.Append(transform.DOMoveY(startYPosTop, movementTimeVertical).SetEase(movementEase).OnComplete(() => {
+            moveXSeq.Play();
         }));
         moveYSeq.SetLoops(-1);
         moveYSeq.Pause();
@@ -60,5 +63,6 @@ public class AcidController : MonoBehaviour
 
     public void TriggerStart() {
         moveYSeq.Play();
+        moveXSeq.Play();
     }
 }

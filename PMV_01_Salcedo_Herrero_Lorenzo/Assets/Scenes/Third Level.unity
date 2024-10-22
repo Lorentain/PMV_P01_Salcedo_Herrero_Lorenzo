@@ -1055,7 +1055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1262238583}
   - component: {fileID: 1262238582}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera Limit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4937,6 +4937,10 @@ PrefabInstance:
     - target: {fileID: 6030332533131000385, guid: e57ba41376359e34580e54c71ca15d90, type: 3}
       propertyPath: endYPosDown
       value: -8.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6030332533131000385, guid: e57ba41376359e34580e54c71ca15d90, type: 3}
+      propertyPath: startYPosTop
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 6275628697915199137, guid: e57ba41376359e34580e54c71ca15d90, type: 3}
       propertyPath: m_Name
