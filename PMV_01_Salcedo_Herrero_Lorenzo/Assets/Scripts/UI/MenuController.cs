@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
 
-    [Tooltip("")]
     [SerializeField] private GameObject initialWarning; // Canvas aviso al iniciar el juego
 
     [SerializeField] private string linkSurvey; // Link de la encuesta
@@ -15,11 +14,13 @@ public class MenuController : MonoBehaviour
 
     public void AceptarComienzo()
     {
+        AudioManager.PlayButtonClickSound();
         initialWarning.gameObject.SetActive(false);
     }
 
     public void AbrirEncuesta()
     {
+        AudioManager.PlayButtonClickSound();
         Application.OpenURL(linkSurvey);
     }
 
@@ -30,12 +31,18 @@ public class MenuController : MonoBehaviour
         UnityEditor.EditorApplication.isPlaying = false;
         #else
         // Esto cerrará la aplicación si está ejecutándose fuera del editor.
+        AudioManager.PlayButtonClickSound();
         Application.Quit();
         #endif
     }
 
     public void NewGameLevel()
     {
+        AudioManager.PlayButtonClickSound();
+        Invoke("NewGameLevelInvoke",1f);
+    }
+
+    public void NewGameLevelInvoke() {
         SceneManager.LoadScene(LevelToLoad);
     }
 }

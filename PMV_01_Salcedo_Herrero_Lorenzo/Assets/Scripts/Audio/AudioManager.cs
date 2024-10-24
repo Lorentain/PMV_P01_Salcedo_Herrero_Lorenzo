@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip openDoorSound;
     public AudioClip lockDoorSound;
     public AudioClip keyPickUpSound;
+    public AudioClip buttonClickSound;
 
     private void Awake()
     {
@@ -34,5 +35,9 @@ public class AudioManager : MonoBehaviour
     public static void PlayLockDoorSound()
     {
         instance.audioSourceObjetos.PlayOneShot(instance.lockDoorSound);
+    }
+
+    public static void PlayButtonClickSound() {
+        instance.audioSourceObjetos.PlayOneShot(instance.buttonClickSound);
     }
 }

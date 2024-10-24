@@ -131,6 +131,8 @@ public class PlayerController : MonoBehaviour
 
         // Animación de movimiento en x del jugador
         animator.SetBool("Walking", rb.velocity.x != 0);
+        animator.SetBool("Jumping",rb.velocity.y > 0);
+        animator.SetBool("Falling", rb.velocity.y < 0);
         spriteRenderer.flipX = rb.velocity.x < 0;
 
         // Comprobación tiempo del Coyote
