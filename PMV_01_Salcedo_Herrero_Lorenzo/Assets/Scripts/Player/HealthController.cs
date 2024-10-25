@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,17 @@ public class HealthController : MonoBehaviour
 
     private static HealthController instance;
 
-    [Tooltip("Referencia a la vida actual del jugador")]
+    [Tooltip("Referencia al Animator2D")]
+    [SerializeField] private Animator animator;
+
+    [Tooltip("Referencia a la vida del jugador")]
     [SerializeField] private int playerHP = 3;
+
+    [Tooltip("Referencia a la vida actual del jugador")]
     [SerializeField] private int actualHP;
+
+    [Tooltip("Referencia a la camara")]
+    [SerializeField] private new Camera camera;
 
     private void Start() {
         actualHP = PlayerPrefs.GetInt("HP",playerHP);
@@ -30,33 +39,14 @@ public class HealthController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        camera.DOShakePosition(0.8f,0.1f,10,70);
         actualHP -= damage;
         UIController.SetHealthUI(actualHP);
         if(actualHP <= 0) {
-            Destroy(gameObject);
+            animator.SetBool("Dead",true);
             PlayerPrefs.DeleteAll();
         }
     }
 
-    #endregion
-
-    #region Unity Colisión y Trigger
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.collider.CompareTag("Spike") || other.collider.CompareTag("Lava")) // Colisión contra pinchos
-        {
-            Destroy(gameObject);
-            PlayerPrefs.DeleteAll();
-        }
-    }
-
-    // TRIGGERS
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy")) // Trigger contra enemigo
-        {
-            actualHP--;
-        }
-    }
     #endregion
 }
