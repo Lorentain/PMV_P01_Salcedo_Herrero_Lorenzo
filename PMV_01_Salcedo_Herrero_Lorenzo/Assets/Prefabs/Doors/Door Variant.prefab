@@ -49,6 +49,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5644918618693185722, guid: 0aa4677971869e045b3f3cb8b58fa4c8, type: 3}
+      propertyPath: needKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5644918618693185722, guid: 0aa4677971869e045b3f3cb8b58fa4c8, type: 3}
       propertyPath: nextLevel
       value: Third Level
       objectReference: {fileID: 0}
@@ -56,6 +60,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21043741, guid: 702cf0708e8007049aafaef505ae6208, type: 3}
+    - target: {fileID: 6148647138939951466, guid: 0aa4677971869e045b3f3cb8b58fa4c8, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148647138939951466, guid: 0aa4677971869e045b3f3cb8b58fa4c8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148647138939951466, guid: 0aa4677971869e045b3f3cb8b58fa4c8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.69803923
+      objectReference: {fileID: 0}
     - target: {fileID: 8464599905793399492, guid: 0aa4677971869e045b3f3cb8b58fa4c8, type: 3}
       propertyPath: m_Name
       value: Door Variant

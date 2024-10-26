@@ -22,6 +22,12 @@ public class HealthController : MonoBehaviour
     [Tooltip("Referencia a la camara")]
     [SerializeField] private new Camera camera;
 
+    [Tooltip("Referencia a si está muerto")]
+    private bool isDead = false;
+
+    [Tooltip("Referencia al sistema de partículas de la muerte del jugador")]
+    [SerializeField] private ParticleSystem particleSystemDead;
+
     private void Start() {
         actualHP = PlayerPrefs.GetInt("HP",playerHP);
         UIController.SetHealthUI(actualHP);
@@ -43,9 +49,15 @@ public class HealthController : MonoBehaviour
         actualHP -= damage;
         UIController.SetHealthUI(actualHP);
         if(actualHP <= 0) {
+            particleSystemDead.Play();
             animator.SetBool("Dead",true);
+            isDead = true;
             PlayerPrefs.DeleteAll();
         }
+    }
+
+    public static bool GetIsDead() {
+        return instance.isDead;
     }
 
     #endregion

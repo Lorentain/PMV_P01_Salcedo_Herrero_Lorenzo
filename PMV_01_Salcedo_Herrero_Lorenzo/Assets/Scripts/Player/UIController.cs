@@ -43,7 +43,7 @@ public class UIController : MonoBehaviour
             instance.heart1.gameObject.SetActive(false);
             instance.heart2.gameObject.SetActive(false);
             instance.heart3.gameObject.SetActive(false);
-            instance.backgroundGameOverUI.gameObject.SetActive(true); // Hacer invoke
+            instance.Invoke("SetGameOverUI",2);
         }
         switch (hp)
         {
@@ -60,5 +60,9 @@ public class UIController : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public void SetGameOverUI() {
+        instance.backgroundGameOverUI.gameObject.SetActive(true);
     }
 }

@@ -2553,22 +2553,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
-    - target: {fileID: 2394931435673280885, guid: 84c24bbe0424346498407926ef54a5e9, type: 3}
-      propertyPath: needKey
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196834912629033125, guid: 84c24bbe0424346498407926ef54a5e9, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196834912629033125, guid: 84c24bbe0424346498407926ef54a5e9, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4196834912629033125, guid: 84c24bbe0424346498407926ef54a5e9, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8849573579503161046, guid: 84c24bbe0424346498407926ef54a5e9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.098922
@@ -2756,6 +2740,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 797590160178812545, guid: 10cf9659c3b7e6f4aa900d0132004343, type: 3}
+      propertyPath: maxCoins
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 797590160178812545, guid: 10cf9659c3b7e6f4aa900d0132004343, type: 3}
       propertyPath: listSpawnPositions.Array.size
       value: 8

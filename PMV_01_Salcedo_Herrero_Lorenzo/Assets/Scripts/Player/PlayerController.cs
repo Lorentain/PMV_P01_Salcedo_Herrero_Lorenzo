@@ -77,78 +77,83 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // MOVIMIENTO BÁSICO DEL JUGADOR
+        // Comprobar si el jugador esta muerto
+        if(HealthController.GetIsDead() == false) { 
+            
+            // MOVIMIENTO BÁSICO DEL JUGADOR
 
-        // Compruebo si se mueve el jugador
-        if (Input.GetKey(KeyCode.D))
-        {
-            movementDirection = Vector2.right;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            movementDirection = Vector2.left;
-        }
-        else
-        {
-            movementDirection = Vector2.zero;
-        }
+            // Compruebo si se mueve el jugador
+            if (Input.GetKey(KeyCode.D))
+            {
+                movementDirection = Vector2.right;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                movementDirection = Vector2.left;
+            }
+            else
+            {
+                movementDirection = Vector2.zero;
+            }
 
-        // Compruebo si está tocando el suelo y si salta el jugador
-        if (Input.GetKeyDown(KeyCode.Space) && CanJump())
-        {
-            isJumping = true;
-            jumpTime = 0;
-            timeInAir = maxCoyoteTime;
-            particles.Stop();
-            Debug.Log("Particulas paradas");
-        }
+            // Compruebo si está tocando el suelo y si salta el jugador
+            if (Input.GetKeyDown(KeyCode.Space) && CanJump())
+            {
+                isJumping = true;
+                jumpTime = 0;
+                timeInAir = maxCoyoteTime;
+                particles.Stop();
+                Debug.Log("Particulas paradas");
+            }
 
-        // Pausar durante el salto
-        if (Input.GetKey(KeyCode.P) && CanJump())
-        {
-            Debug.DrawLine(groundedRaycastLeftOrigin.position, groundedRaycastLeftOrigin.position + Vector3.down * sizeRaycast, Color.magenta, 100);
-            Debug.DrawLine(groundedRaycastRightOrigin.position, groundedRaycastRightOrigin.position + Vector3.down * sizeRaycast, Color.yellow, 100);
-            #if UNITY_EDITOR
-            EditorApplication.isPaused = true;
-            #endif
-        }
+            // Pausar durante el salto
+            if (Input.GetKey(KeyCode.P) && CanJump())
+            {
+                Debug.DrawLine(groundedRaycastLeftOrigin.position, groundedRaycastLeftOrigin.position + Vector3.down * sizeRaycast, Color.magenta, 100);
+                Debug.DrawLine(groundedRaycastRightOrigin.position, groundedRaycastRightOrigin.position + Vector3.down * sizeRaycast, Color.yellow, 100);
+                #if UNITY_EDITOR
+                EditorApplication.isPaused = true;
+                #endif
+            }
 
-        // Comprobar si ya no está saltando el jugador
+            // Comprobar si ya no está saltando el jugador
 
-        if (Input.GetKeyUp(KeyCode.Space) || (jumpTime > maxJumpTime))
-        {
-            isJumping = false;
-        }
+            if (Input.GetKeyUp(KeyCode.Space) || (jumpTime > maxJumpTime))
+            {
+                isJumping = false;
+            }
 
-        if(isJumping) {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            jumpTime += Time.deltaTime;
-            particles.Stop();
-        }
+            if(isJumping) {
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                jumpTime += Time.deltaTime;
+                particles.Stop();
+            }
 
-        // Se limita la velocidad máxima x,y
-        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxVelocityX, maxVelocityX), Mathf.Clamp(rb.velocity.y, -maxVelocityY, maxVelocityY));
+            // Se limita la velocidad máxima x,y
+            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxVelocityX, maxVelocityX), Mathf.Clamp(rb.velocity.y, -maxVelocityY, maxVelocityY));
 
-        // Animación de movimiento en x del jugador
-        animator.SetBool("Walking", rb.velocity.x != 0);
-        animator.SetBool("Jumping",rb.velocity.y > 0);
-        animator.SetBool("Falling", rb.velocity.y < 0);
-        spriteRenderer.flipX = rb.velocity.x < 0;
+            // Animación de movimiento en x del jugador
+            animator.SetBool("Walking", rb.velocity.x != 0);
+            animator.SetBool("Jumping",rb.velocity.y > 0);
+            animator.SetBool("Falling", rb.velocity.y < 0);
+            spriteRenderer.flipX = rb.velocity.x < 0;
 
-        // Comprobación tiempo del Coyote
-        if (!IsGrounded())
-        {
-            timeInAir += Time.deltaTime;
-        }
-        else
-        {
-            timeInAir = 0;
-        }
+            // Comprobación tiempo del Coyote
+            if (!IsGrounded())
+            {
+                timeInAir += Time.deltaTime;
+            }
+            else
+            {
+                timeInAir = 0;
+            }
 
-        // Particulas al caminar
-        if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && IsGrounded())
-        {
-            particles.Play();
+            // Particulas al caminar
+            if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && IsGrounded())
+            {
+                particles.Play();
+            }
+
         }
     }
 
