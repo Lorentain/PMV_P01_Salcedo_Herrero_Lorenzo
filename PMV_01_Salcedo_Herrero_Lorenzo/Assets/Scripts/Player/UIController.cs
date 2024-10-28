@@ -22,6 +22,9 @@ public class UIController : MonoBehaviour
     // INTERFAZ GAME OVER
     [SerializeField] private Image backgroundGameOverUI;
 
+    // BOOL AUXILIAR
+    private static bool dead = false;
+
     private void Start() {
          
     }
@@ -38,12 +41,14 @@ public class UIController : MonoBehaviour
 
     public static void SetHealthUI(int hp)
     {
-        if (hp <= 0)
+        if (hp <= 0 && dead == false)
         {
             instance.heart1.gameObject.SetActive(false);
             instance.heart2.gameObject.SetActive(false);
             instance.heart3.gameObject.SetActive(false);
             instance.Invoke("SetGameOverUI",2);
+            AudioManager.StopMusicAmbient();
+            dead = true;
         }
         switch (hp)
         {
@@ -63,6 +68,7 @@ public class UIController : MonoBehaviour
     }
 
     public void SetGameOverUI() {
+        AudioManager.PlayGameOverSound();
         instance.backgroundGameOverUI.gameObject.SetActive(true);
     }
 }

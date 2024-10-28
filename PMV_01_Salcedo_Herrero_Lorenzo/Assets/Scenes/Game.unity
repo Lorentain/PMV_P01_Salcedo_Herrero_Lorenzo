@@ -3952,57 +3952,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1989067109313711374, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2736494169427750499, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.b
-      value: 0.86111116
-      objectReference: {fileID: 0}
-    - target: {fileID: 2736494169427750499, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2736494169427750499, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695044212262066384, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.b
-      value: 0.86111116
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695044212262066384, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695044212262066384, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4204922480173211820, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7630952175302132647, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7630952175302132647, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.r
-      value: 0.92156863
-      objectReference: {fileID: 0}
-    - target: {fileID: 8594695537058432399, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.b
-      value: 0.86111116
-      objectReference: {fileID: 0}
-    - target: {fileID: 8594695537058432399, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8594695537058432399, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4023,9 +3975,9 @@ SceneRoots:
   - {fileID: 1651691501}
   - {fileID: 572566645}
   - {fileID: 1446806429}
-  - {fileID: 8700247374972768910}
   - {fileID: 494212122}
   - {fileID: 83054215}
-  - {fileID: 5329594305482484319}
   - {fileID: 1387341031}
   - {fileID: 591236302}
+  - {fileID: 5329594305482484319}
+  - {fileID: 8700247374972768910}

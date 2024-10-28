@@ -43,7 +43,6 @@ public class AcidController : MonoBehaviour
     }
 
     private void Start() {
-        ;
         moveXSeq = DOTween.Sequence(); // Secuencia movimiento en Y
         moveXSeq.Append(transform.DOMoveX(endXPos, movementTimeHorizontal).SetEase(movementEase));
         moveXSeq.Append(transform.DOMoveX(startXPos, movementTimeHorizontal).SetEase(movementEase));
