@@ -154,6 +154,11 @@ public class PlayerController : MonoBehaviour
                 particles.Play();
             }
 
+        }else {
+            rb.velocity = Vector2.zero;
+            rb.angularVelocity = 0;
+            rb.bodyType = RigidbodyType2D.Kinematic;
+            rb.simulated = false;
         }
     }
 

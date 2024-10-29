@@ -23,10 +23,10 @@ public class UIController : MonoBehaviour
     [SerializeField] private Image backgroundGameOverUI;
 
     // BOOL AUXILIAR
-    private static bool dead = false;
+    private static bool dead;
 
     private void Start() {
-         
+        dead = false;
     }
 
     private void Awake()
