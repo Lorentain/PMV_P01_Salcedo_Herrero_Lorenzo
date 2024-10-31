@@ -47,6 +47,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Referencia a la velocidadX máxima del jugador")]
     [SerializeField] private float maxVelocityX;
 
+    [Tooltip("Referencia a la velocidad X en el aire máxima del jugador")]
+    [SerializeField] private float maxVelocityAirX;
+
     [Tooltip("Referencia a la velocidadY máxima del jugador")]
     [SerializeField] private float maxVelocityY;
 
@@ -97,7 +100,7 @@ public class PlayerController : MonoBehaviour
             }
 
             // Compruebo si está tocando el suelo y si salta el jugador
-            if (Input.GetKeyDown(KeyCode.Space) && CanJump())
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && CanJump())
             {
                 isJumping = true;
                 jumpTime = 0;
@@ -118,7 +121,7 @@ public class PlayerController : MonoBehaviour
 
             // Comprobar si ya no está saltando el jugador
 
-            if (Input.GetKeyUp(KeyCode.Space) || (jumpTime > maxJumpTime))
+            if (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W) || (jumpTime > maxJumpTime))
             {
                 isJumping = false;
             }
@@ -130,7 +133,11 @@ public class PlayerController : MonoBehaviour
             }
 
             // Se limita la velocidad máxima x,y
-            rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxVelocityX, maxVelocityX), Mathf.Clamp(rb.velocity.y, -maxVelocityY, maxVelocityY));
+            if(IsGrounded()) {
+                rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxVelocityX, maxVelocityX), Mathf.Clamp(rb.velocity.y, -maxVelocityY, maxVelocityY));
+            }else {
+                rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxVelocityAirX, maxVelocityAirX),Mathf.Clamp(rb.velocity.y, -maxVelocityY, maxVelocityY));
+            }
 
             // Animación de movimiento en x del jugador
             animator.SetBool("Walking", rb.velocity.x != 0);

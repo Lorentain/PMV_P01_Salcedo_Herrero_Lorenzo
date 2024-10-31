@@ -4947,7 +4947,8 @@ MonoBehaviour:
   jumpForce: 5.5
   fallForce: 30
   speed: 10
-  maxVelocityX: 6
+  maxVelocityX: 5
+  maxVelocityAirX: 5
   maxVelocityY: 8
   sizeRaycast: 0.2
   maxCoyoteTime: 0.1
