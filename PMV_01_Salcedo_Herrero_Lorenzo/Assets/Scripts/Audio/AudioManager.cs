@@ -13,10 +13,16 @@ public class AudioManager : MonoBehaviour
     public AudioClip keyPickUpSound;
     public AudioClip buttonClickSound;
     public AudioClip gameOverSound;
+    public AudioClip stepSound;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    public static AudioSource GetAudioSource()
+    {
+        return instance.audioSourceObjetos;
     }
 
     public static void PlayCoinPickUpSound()
@@ -39,15 +45,24 @@ public class AudioManager : MonoBehaviour
         instance.audioSourceObjetos.PlayOneShot(instance.lockDoorSound);
     }
 
-    public static void PlayButtonClickSound() {
+    public static void PlayButtonClickSound()
+    {
         instance.audioSourceObjetos.PlayOneShot(instance.buttonClickSound);
     }
 
-    public static void PlayGameOverSound() {
+    public static void PlayGameOverSound()
+    {
         instance.audioSourceObjetos.PlayOneShot(instance.gameOverSound);
     }
 
-    public static void StopMusicAmbient() {
+    public static void PlayStepSound()
+    {
+        instance.audioSourceObjetos.pitch = Random.Range(0.9f, 1.1f);
+        instance.audioSourceObjetos.PlayOneShot(instance.stepSound);
+    }
+
+    public static void StopMusicAmbient()
+    {
         instance.ambientMusic.Stop();
     }
 }

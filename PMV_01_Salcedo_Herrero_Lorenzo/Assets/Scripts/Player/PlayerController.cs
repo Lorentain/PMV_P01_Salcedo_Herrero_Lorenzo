@@ -81,8 +81,9 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // Comprobar si el jugador esta muerto
-        if(HealthController.GetIsDead() == false) { 
-            
+        if (HealthController.GetIsDead() == false)
+        {
+
             // MOVIMIENTO BÁSICO DEL JUGADOR
 
             // Compruebo si se mueve el jugador
@@ -114,9 +115,9 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.DrawLine(groundedRaycastLeftOrigin.position, groundedRaycastLeftOrigin.position + Vector3.down * sizeRaycast, Color.magenta, 100);
                 Debug.DrawLine(groundedRaycastRightOrigin.position, groundedRaycastRightOrigin.position + Vector3.down * sizeRaycast, Color.yellow, 100);
-                #if UNITY_EDITOR
+#if UNITY_EDITOR
                 EditorApplication.isPaused = true;
-                #endif
+#endif
             }
 
             // Comprobar si ya no está saltando el jugador
@@ -126,22 +127,26 @@ public class PlayerController : MonoBehaviour
                 isJumping = false;
             }
 
-            if(isJumping) {
+            if (isJumping)
+            {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 jumpTime += Time.deltaTime;
                 particles.Stop();
             }
 
             // Se limita la velocidad máxima x,y
-            if(IsGrounded()) {
+            if (IsGrounded())
+            {
                 rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxVelocityX, maxVelocityX), Mathf.Clamp(rb.velocity.y, -maxVelocityY, maxVelocityY));
-            }else {
-                rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxVelocityAirX, maxVelocityAirX),Mathf.Clamp(rb.velocity.y, -maxVelocityY, maxVelocityY));
+            }
+            else
+            {
+                rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x, -maxVelocityAirX, maxVelocityAirX), Mathf.Clamp(rb.velocity.y, -maxVelocityY, maxVelocityY));
             }
 
             // Animación de movimiento en x del jugador
             animator.SetBool("Walking", rb.velocity.x != 0);
-            animator.SetBool("Jumping",rb.velocity.y > 0);
+            animator.SetBool("Jumping", rb.velocity.y > 0);
             animator.SetBool("Falling", rb.velocity.y < 0);
             spriteRenderer.flipX = rb.velocity.x < 0;
 
@@ -161,7 +166,9 @@ public class PlayerController : MonoBehaviour
                 particles.Play();
             }
 
-        }else {
+        }
+        else
+        {
             rb.velocity = Vector2.zero;
             rb.angularVelocity = 0;
             rb.bodyType = RigidbodyType2D.Kinematic;
@@ -198,7 +205,7 @@ public class PlayerController : MonoBehaviour
             ParticleSystem coinParticles = other.GetComponentInChildren<ParticleSystem>();
             coinParticles.transform.parent = null;
             coinParticles.Play();
-            Destroy(coinParticles.gameObject,coinParticles.main.duration + coinParticles.main.startLifetime.constantMax);
+            Destroy(coinParticles.gameObject, coinParticles.main.duration + coinParticles.main.startLifetime.constantMax);
             Destroy(other.gameObject);
             InventoryController.AddMoneda();
         }
@@ -261,5 +268,13 @@ public class PlayerController : MonoBehaviour
         }
 
         return res;
+    }
+
+    public void PlayStepAudio()
+    {
+        if (!AudioManager.GetAudioSource().isPlaying)
+        {
+            AudioManager.PlayStepSound();
+        }
     }
 }

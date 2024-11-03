@@ -28,11 +28,12 @@ public class UIController : MonoBehaviour
     [Tooltip("Referencia al sistema de partículas del corazón 3")]
     [SerializeField] private ParticleSystem heart3Particles;
 
+     // DOTWEEN
+     [Tooltip("Referencia a la cuerva de la animación del DOSCale de los corazones")]
+    [SerializeField] private Ease movementEase;
+
     // INTERFAZ GAME OVER
     [SerializeField] private Image backgroundGameOverUI;
-
-    // DOTWEEN
-    [SerializeField] private Ease movementEase;
 
     // BOOL AUXILIAR
     private static bool dead;
