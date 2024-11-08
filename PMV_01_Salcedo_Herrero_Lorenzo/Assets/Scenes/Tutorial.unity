@@ -413,8 +413,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48.899994, y: 9.600006}
-  m_SizeDelta: {x: 22.5057, y: 22.5057}
+  m_AnchoredPosition: {x: -88, y: 0.000014544}
+  m_SizeDelta: {x: 38.7806, y: 38.7806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208705278
 MonoBehaviour:
@@ -566,8 +566,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0008087158, y: 29.917992}
-  m_SizeDelta: {x: 274.37, y: 50}
+  m_AnchoredPosition: {x: -0.0010099, y: 71.233}
+  m_SizeDelta: {x: 478.21, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &239056423
 MonoBehaviour:
@@ -616,8 +616,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -910,9 +910,83 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 460397342}
+    m_ColliderPaths:
+    - - X: 110000000
+        Y: -58125000
+      - X: 110000000
+        Y: -41250000
+      - X: 107500000
+        Y: -40000000
+      - X: 100000000
+        Y: -40000000
+      - X: 100000000
+        Y: 40000000
+      - X: 108125000
+        Y: 40000000
+      - X: 110000000
+        Y: 41875000
+      - X: 110000000
+        Y: 58750000
+      - X: 107500000
+        Y: 60000000
+      - X: -108125000
+        Y: 60000000
+      - X: -110000000
+        Y: 58125000
+      - X: -110000000
+        Y: 42500000
+      - X: -108125000
+        Y: 40000000
+      - X: -100000000
+        Y: 40000000
+      - X: -100000000
+        Y: -40000000
+      - X: -108125000
+        Y: -40000000
+      - X: -110000000
+        Y: -41875000
+      - X: -110000000
+        Y: -57500000
+      - X: -108125000
+        Y: -60000000
+      - X: 108125000
+        Y: -60000000
+    - - X: -90000000
+        Y: -40000000
+      - X: -90000000
+        Y: 40000000
+      - X: 90000000
+        Y: 40000000
+      - X: 90000000
+        Y: -40000000
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 10.8124895, y: -6}
+      - {x: 11, y: -5.812489}
+      - {x: 10.999985, y: -4.1249924}
+      - {x: 10.749994, y: -4}
+      - {x: 10, y: -3.9999704}
+      - {x: 10.00003, y: 4}
+      - {x: 10.812508, y: 4.0000076}
+      - {x: 11, y: 4.187511}
+      - {x: 10.999985, y: 5.8750076}
+      - {x: 10.749994, y: 6}
+      - {x: -10.812508, y: 5.9999924}
+      - {x: -11, y: 5.812489}
+      - {x: -10.999995, y: 4.2499933}
+      - {x: -10.812487, y: 4}
+      - {x: -10, y: 3.9999704}
+      - {x: -10.00003, y: -4}
+      - {x: -10.812508, y: -4.0000076}
+      - {x: -11, y: -4.187511}
+      - {x: -10.999995, y: -5.7500067}
+      - {x: -10.812487, y: -6}
+    - - {x: 9, y: -3.9999704}
+      - {x: -9, y: -3.9999704}
+      - {x: -8.99997, y: 4}
+      - {x: 9, y: 3.9999704}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -975,7 +1049,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -2630,6 +2704,7 @@ GameObject:
   - component: {fileID: 896852191}
   - component: {fileID: 896852193}
   - component: {fileID: 896852192}
+  - component: {fileID: 896852194}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -2664,7 +2739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0748444e13ad7b2419714b1f2b330a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: 0
+  door: 2
   firstPart: {fileID: 0}
   secondPart: {fileID: 0}
 --- !u!212 &896852193
@@ -2719,6 +2794,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &896852194
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896852190}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &932065397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3047,7 +3167,35 @@ CompositeCollider2D:
   m_EdgeRadius: 0
   m_ColliderPaths: []
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 10.8124895, y: -6}
+      - {x: 11, y: -5.812489}
+      - {x: 10.999985, y: -4.1249924}
+      - {x: 10.749994, y: -4}
+      - {x: 10, y: -3.9999704}
+      - {x: 10.00003, y: 4}
+      - {x: 10.812508, y: 4.0000076}
+      - {x: 11, y: 4.187511}
+      - {x: 10.999985, y: 5.8750076}
+      - {x: 10.749994, y: 6}
+      - {x: -10.812508, y: 5.9999924}
+      - {x: -11, y: 5.812489}
+      - {x: -10.999995, y: 4.2499933}
+      - {x: -10.812487, y: 4}
+      - {x: -10, y: 3.9999704}
+      - {x: -10.00003, y: -4}
+      - {x: -10.812508, y: -4.0000076}
+      - {x: -11, y: -4.187511}
+      - {x: -10.999995, y: -5.7500067}
+      - {x: -10.812487, y: -6}
+    - - {x: 9, y: -3.9999704}
+      - {x: -9, y: -3.9999704}
+      - {x: -8.99997, y: 4}
+      - {x: -4, y: 3.9999704}
+      - {x: -3.999971, y: -2}
+      - {x: -3, y: -1.9999708}
+      - {x: -2.9999707, y: 4}
+      - {x: 9, y: 3.9999704}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -3110,7 +3258,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -4649,10 +4797,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -4737,8 +4885,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50.100006, y: 10.999981}
-  m_SizeDelta: {x: 22.5057, y: 22.5057}
+  m_AnchoredPosition: {x: -86.1, y: 11.6}
+  m_SizeDelta: {x: 38.7806, y: 38.7806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223228559
 MonoBehaviour:
@@ -4851,8 +4999,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0008087158, y: -26.482006}
-  m_SizeDelta: {x: 271.9801, y: 50}
+  m_AnchoredPosition: {x: -0.00098419, y: -40.654125}
+  m_SizeDelta: {x: 478.21, y: 78.3442}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293339091
 MonoBehaviour:
@@ -4901,8 +5049,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7260,7 +7408,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
@@ -7303,7 +7451,31 @@ CompositeCollider2D:
   m_EdgeRadius: 0
   m_ColliderPaths: []
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 10.8124895, y: -6}
+      - {x: 11, y: -5.812489}
+      - {x: 10.999985, y: -4.1249924}
+      - {x: 10.749994, y: -4}
+      - {x: 10, y: -3.9999704}
+      - {x: 10.00003, y: 4}
+      - {x: 10.812508, y: 4.0000076}
+      - {x: 11, y: 4.187511}
+      - {x: 10.999985, y: 5.8750076}
+      - {x: 10.749994, y: 6}
+      - {x: -10.812508, y: 5.9999924}
+      - {x: -11, y: 5.812489}
+      - {x: -10.999995, y: 4.2499933}
+      - {x: -10.812487, y: 4}
+      - {x: -10, y: 3.9999704}
+      - {x: -10.00003, y: -4}
+      - {x: -10.812508, y: -4.0000076}
+      - {x: -11, y: -4.187511}
+      - {x: -10.999995, y: -5.7500067}
+      - {x: -10.812487, y: -6}
+    - - {x: 9, y: -3.9999704}
+      - {x: -9, y: -3.9999704}
+      - {x: -8.99997, y: 4}
+      - {x: 9, y: 3.9999704}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -7468,8 +7640,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 48}
-  m_SizeDelta: {x: 280, y: 125}
+  m_AnchoredPosition: {x: 23.54161, y: 85.72336}
+  m_SizeDelta: {x: 478.2079, y: 213.4857}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2101703317
 MonoBehaviour:

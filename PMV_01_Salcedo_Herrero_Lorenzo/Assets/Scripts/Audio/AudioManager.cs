@@ -7,6 +7,7 @@ public class AudioManager : MonoBehaviour
     private static AudioManager instance;
     public AudioSource audioSourceObjetos;
     public AudioSource ambientMusic;
+    public AudioSource audioSourceStep;
     public AudioClip coinPickUpSound;
     public AudioClip openDoorSound;
     public AudioClip lockDoorSound;
@@ -22,7 +23,7 @@ public class AudioManager : MonoBehaviour
 
     public static AudioSource GetAudioSource()
     {
-        return instance.audioSourceObjetos;
+        return instance.audioSourceStep;
     }
 
     public static void PlayCoinPickUpSound()
@@ -57,8 +58,10 @@ public class AudioManager : MonoBehaviour
 
     public static void PlayStepSound()
     {
-        instance.audioSourceObjetos.pitch = Random.Range(0.9f, 1.1f);
-        instance.audioSourceObjetos.PlayOneShot(instance.stepSound);
+        if (!GetAudioSource().isPlaying) {
+            instance.audioSourceStep.pitch = Random.Range(0.9f, 1.1f);
+            instance.audioSourceStep.PlayOneShot(instance.stepSound);
+        }
     }
 
     public static void StopMusicAmbient()

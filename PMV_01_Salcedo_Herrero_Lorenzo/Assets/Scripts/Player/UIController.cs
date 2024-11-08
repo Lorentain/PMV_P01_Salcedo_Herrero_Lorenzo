@@ -21,12 +21,13 @@ public class UIController : MonoBehaviour
     [SerializeField] private Image heart3;
 
     // REFERENCIAS A LOS SISTEMAS DE PARTÍCULAS DE CADA CORAZON
-    [Tooltip("Referencia al sistema de partículas del corazón 1")]
-    [SerializeField] private ParticleSystem heart1Particles;
-    [Tooltip("Referencia al sistema de partículas del corazón 2")]
-    [SerializeField] private ParticleSystem heart2Particles;
-    [Tooltip("Referencia al sistema de partículas del corazón 3")]
-    [SerializeField] private ParticleSystem heart3Particles;
+    [Tooltip("Referencia al sistema de partículas del corazones")]
+    [SerializeField] private ParticleSystem heartsParticles;
+
+    // REFERENCIAS A LOS RENDER TEXTURE
+    [SerializeField] private GameObject heart1RenderTexture;
+    [SerializeField] private GameObject heart2RenderTexture;
+    [SerializeField] private GameObject heart3RenderTexture;
 
      // DOTWEEN
      [Tooltip("Referencia a la cuerva de la animación del DOSCale de los corazones")]
@@ -65,24 +66,31 @@ public class UIController : MonoBehaviour
             {
                 instance.heart3.transform.DOScale(new Vector3(1.5f, 1.5f, 1f), 1f).SetEase(instance.movementEase).OnComplete(() =>
                 {
-                    instance.heart3Particles.Play();
-                    instance.heart3.gameObject.SetActive(false);
+                    instance.heart3RenderTexture.SetActive(true);
+                    instance.heartsParticles.Play();
+                    instance.heart3.enabled = false;
                 });
+            }else {
+                instance.heart3RenderTexture.SetActive(false);
             }
 
             if (instance.heart2.IsActive())
             {
                 instance.heart2.transform.DOScale(new Vector3(1.5f, 1.5f, 1f), 1f).SetEase(instance.movementEase).OnComplete(() =>
                 {
-                    instance.heart2Particles.Play();
-                    instance.heart2.gameObject.SetActive(false);
+                    instance.heart2RenderTexture.SetActive(true);
+                    instance.heartsParticles.Play();
+                    instance.heart2.enabled = false;
                 });
+            }else {
+                instance.heart2RenderTexture.SetActive(false);
             }
 
             instance.heart1.transform.DOScale(new Vector3(1.5f, 1.5f, 1f), 1f).SetEase(instance.movementEase).OnComplete(() =>
             {
-                instance.heart1Particles.Play();
-                instance.heart1.gameObject.SetActive(false);
+                instance.heart1RenderTexture.SetActive(true);
+                instance.heartsParticles.Play();
+                instance.heart1.enabled = false;
             });
 
             instance.Invoke("SetGameOverUI", 2);
@@ -100,15 +108,19 @@ public class UIController : MonoBehaviour
                     {
                         instance.heart3.transform.DOScale(new Vector3(1.5f, 1.5f, 1f), 1f).SetEase(instance.movementEase).OnComplete(() =>
                         {
-                            instance.heart3Particles.Play();
-                            instance.heart3.gameObject.SetActive(false);
+                            instance.heart3RenderTexture.SetActive(true);
+                            instance.heartsParticles.Play();
+                            instance.heart3.enabled = false;
                         });
+                    }else {
+                        instance.heart3RenderTexture.SetActive(false);
                     }
 
                     instance.heart2.transform.DOScale(new Vector3(1.5f, 1.5f, 1f), 1f).SetEase(instance.movementEase).OnComplete(() =>
                     {
-                        instance.heart2Particles.Play();
-                        instance.heart2.gameObject.SetActive(false);
+                        instance.heart2RenderTexture.SetActive(true);
+                        instance.heartsParticles.Play();
+                        instance.heart2.enabled = false;
                     });
                 }
                 break;
@@ -118,19 +130,14 @@ public class UIController : MonoBehaviour
                     instance.heart3.GetComponent<Animator>().enabled = false;
                     instance.heart3.transform.DOScale(new Vector3(1.5f, 1.5f, 1f), 1f).SetEase(instance.movementEase).OnComplete(() =>
                     {
-                        instance.heart3Particles.Play();
-                        instance.heart3.gameObject.SetActive(false);
+                        instance.heart3RenderTexture.SetActive(true);
+                        instance.heartsParticles.Play();
+                        instance.heart3.enabled = false;
                     });
                 }
                 break;
         }
     }
-
-    //     ParticleSystem coinParticles = other.GetComponentInChildren<ParticleSystem>();
-    // coinParticles.transform.parent = null;
-    // coinParticles.Play();
-    // Destroy(coinParticles.gameObject,coinParticles.main.duration + coinParticles.main.startLifetime.constantMax);
-    // Destroy(other.gameObject);
 
     public void SetGameOverUI()
     {

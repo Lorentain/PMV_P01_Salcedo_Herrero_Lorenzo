@@ -8,13 +8,20 @@ public class EnemyController : MonoBehaviour
     [Tooltip("Referencia al daño que produce")]
     [SerializeField] private int damage;
 
+    [SerializeField] private ParticleSystem particleSystemDead;
+
     void Update() {
 
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.collider.CompareTag("Player")) {
-            other.gameObject.GetComponent<HealthController>().TakeDamage(damage);
+            if(other.GetContact(0).normal.y < 0 && gameObject.CompareTag("Enemy")) {
+                particleSystemDead.Play();
+                Destroy(gameObject,2);
+            }else {
+                other.gameObject.GetComponent<HealthController>().TakeDamage(damage);
+            }
         }
     }
 }

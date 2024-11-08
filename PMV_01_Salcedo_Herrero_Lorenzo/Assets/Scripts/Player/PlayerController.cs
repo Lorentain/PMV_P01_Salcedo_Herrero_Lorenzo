@@ -231,7 +231,6 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             res = true;
-            Debug.Log(hit.collider.name);
         }
 
         if (!res)
@@ -240,7 +239,6 @@ public class PlayerController : MonoBehaviour
             if (hit.collider != null)
             {
                 res = true;
-                Debug.Log(hit.collider.name);
             }
         }
 
@@ -268,13 +266,5 @@ public class PlayerController : MonoBehaviour
         }
 
         return res;
-    }
-
-    public void PlayStepAudio()
-    {
-        if (!AudioManager.GetAudioSource().isPlaying)
-        {
-            AudioManager.PlayStepSound();
-        }
     }
 }
