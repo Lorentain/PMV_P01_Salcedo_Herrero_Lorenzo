@@ -9,6 +9,9 @@ public class TutorialDoorController : MonoBehaviour
     [Tooltip("Referencia a que puerta es del tutorial")]
     [SerializeField] private int door;
 
+    [Tooltip("Referencia al jugador")]
+    [SerializeField] private GameObject player;
+
     [Tooltip("Referencia a las partes del tutorial")]
     [SerializeField] private GameObject firstPart;
 
@@ -25,6 +28,7 @@ public class TutorialDoorController : MonoBehaviour
                 case 1:
                     {
                         AudioManager.PlayOpenDoorSound();
+                        player.transform.position = new Vector3(8f,-3.5f,0f);
                         firstPart.SetActive(false);
                         secondPart.SetActive(true);
                         break;
@@ -32,6 +36,7 @@ public class TutorialDoorController : MonoBehaviour
                 case 2:
                     {
                         AudioManager.PlayOpenDoorSound();
+                        player.transform.position = new Vector3(8f,-3.5f,0f);
                         secondPart.SetActive(false);
                         thirdPart.SetActive(true);
                         break;
@@ -39,7 +44,7 @@ public class TutorialDoorController : MonoBehaviour
                 case 3:
                     {
                         AudioManager.PlayOpenDoorSound();
-                        Invoke("EmpezarJuego", 2f);
+                        Invoke("EmpezarJuego", 1f);
                         break;
                     }
             }

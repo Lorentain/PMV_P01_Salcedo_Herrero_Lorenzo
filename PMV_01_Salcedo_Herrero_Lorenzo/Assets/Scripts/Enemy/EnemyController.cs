@@ -5,6 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
+    [Tooltip("Referencia al animator")]
+    [SerializeField] private Animator animator;
+
     [Tooltip("Referencia al daño que produce")]
     [SerializeField] private int damage;
 
@@ -18,7 +21,7 @@ public class EnemyController : MonoBehaviour
         if(other.collider.CompareTag("Player")) {
             if(other.GetContact(0).normal.y < 0 && gameObject.CompareTag("Enemy")) {
                 particleSystemDead.Play();
-                Destroy(gameObject,2);
+                animator.SetBool("Dead", true);
             }else {
                 other.gameObject.GetComponent<HealthController>().TakeDamage(damage);
             }

@@ -4999,6 +4999,11 @@ MonoBehaviour:
   heart1: {fileID: 0}
   heart2: {fileID: 0}
   heart3: {fileID: 0}
+  heartsParticles: {fileID: 0}
+  heart1RenderTexture: {fileID: 0}
+  heart2RenderTexture: {fileID: 0}
+  heart3RenderTexture: {fileID: 0}
+  movementEase: 7
   backgroundGameOverUI: {fileID: 0}
 --- !u!50 &6063596635492483356
 Rigidbody2D:
@@ -9986,6 +9991,7 @@ GameObject:
   - component: {fileID: 5413613539256926865}
   - component: {fileID: 4608867422055142678}
   - component: {fileID: 2860694957724440453}
+  - component: {fileID: 8666483526482481844}
   m_Layer: 2
   m_Name: Sprite Renderer
   m_TagString: Untagged
@@ -10081,3 +10087,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8666483526482481844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8197412352726355935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8609f7fc91da864196dd7cd6d2ac426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
