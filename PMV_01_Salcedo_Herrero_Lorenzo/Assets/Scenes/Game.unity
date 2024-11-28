@@ -9192,13 +9192,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 744897288257043148, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
+      propertyPath: m_text
+      value: Play Again
+      objectReference: {fileID: 0}
     - target: {fileID: 1840599205352103588, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1631338384}
+    - target: {fileID: 1989067109313711374, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4092750350676421964, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
+      propertyPath: m_text
+      value: Exit
+      objectReference: {fileID: 0}
     - target: {fileID: 4204922480173211820, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474054078717643203, guid: 8aff950cdc28c26479aaad25009ac03d, type: 3}
+      propertyPath: m_text
+      value: Survey
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
