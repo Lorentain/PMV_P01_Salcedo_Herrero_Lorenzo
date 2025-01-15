@@ -304,7 +304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Gracias por jugar esta demo. Espero que te haya gustado.
+  m_text: Thank you for playing this demo. I hope you enjoyed it.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JUEGO TERMINADO
+  m_text: GAME FINISHED
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
@@ -842,7 +842,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Salir
+  m_text: Exit
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Encuesta
+  m_text: Survey
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
