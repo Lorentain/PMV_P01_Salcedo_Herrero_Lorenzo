@@ -522,6 +522,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4818536523453652693, guid: c1d8291a94337f944afab77e91f879a0, type: 3}
+      propertyPath: damage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818536523453652693, guid: c1d8291a94337f944afab77e91f879a0, type: 3}
       propertyPath: inmortal
       value: 1
       objectReference: {fileID: 0}
@@ -2437,6 +2441,10 @@ PrefabInstance:
     - target: {fileID: 2106339957824340526, guid: c1d8291a94337f944afab77e91f879a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4818536523453652693, guid: c1d8291a94337f944afab77e91f879a0, type: 3}
+      propertyPath: damage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4818536523453652693, guid: c1d8291a94337f944afab77e91f879a0, type: 3}
       propertyPath: inmortal

@@ -385,7 +385,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Salta y esquiva enemigos/trampas para superar los niveles
+  m_text: Jump and dodge enemies/traps to overcome the levels
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -679,7 +679,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 46.4}
+  m_AnchoredPosition: {x: -23, y: 46.39997}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208705278
@@ -832,7 +832,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0010433, y: 76.936}
+  m_AnchoredPosition: {x: 0.0010433, y: 49}
   m_SizeDelta: {x: 478.21, y: 138.0163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &239056423
@@ -855,7 +855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pulsa      para moverte hacia la derecha
+  m_text: Press      move to right
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
@@ -882,8 +882,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 46
+  m_fontSizeBase: 46
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -918,7 +918,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 37.45465}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2745,7 +2745,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.1, y: 44.4}
+  m_AnchoredPosition: {x: 19, y: 44.4}
   m_SizeDelta: {x: 38.7806, y: 38.7806}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &541204418
@@ -3230,7 +3230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -31.79, y: 44.4}
+  m_AnchoredPosition: {x: -55, y: 44.4}
   m_SizeDelta: {x: 63.581, y: 63.581}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &833665076
@@ -3718,7 +3718,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Empezar Juego
+  m_text: Start level 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
@@ -5664,7 +5664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: 43.3}
+  m_AnchoredPosition: {x: -23, y: 46.872}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1223228559
@@ -5886,7 +5886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0010452, y: -70.872}
+  m_AnchoredPosition: {x: -0.0010452, y: -85.9}
   m_SizeDelta: {x: 478.21, y: 141.7449}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293339091
@@ -5909,7 +5909,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pulsa      para moverte hacia la izquierda
+  m_text: 'Press      move to
+
+    left'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
@@ -5936,8 +5938,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 46
+  m_fontSizeBase: 46
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5972,7 +5974,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 45.34146}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6228,7 +6230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pulsa       /     para saltar obst\xE1culos y poder avanzar"
+  m_text: Press       /     to jump over obstacles and move forward.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
   m_sharedMaterial: {fileID: -6057490831448453732, guid: 92f290d67d96d0b43ba77dfe7fe4ed75, type: 2}
